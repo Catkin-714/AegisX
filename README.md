@@ -117,6 +117,14 @@ Compose 会构建 `phantomshield-crypten:local` 和默认 MCU 镜像。完整 BE
 python dashboard/backend/main.py
 ```
 
+Windows 用户也可以直接运行仓库根目录下的一键启动脚本：
+
+```bat
+start_dashboard.bat
+```
+
+该脚本会自动检查 Python 环境、创建 `.venv`、安装依赖、下载模型文件、检测 Docker 状态，然后启动 Dashboard 并打开前端页面。
+
 浏览器打开 `dashboard/frontend/index.html`。在舆情情感分析 BERT 场景中：
 
 - 选择 BERT 模式：plaintext、CrypTen 或 MCU-Rust。

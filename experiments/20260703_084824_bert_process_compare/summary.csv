@@ -1,0 +1,3 @@
+mode,status,n_samples,accuracy,avg_latency_s,top1_match_with_plain,mean_js
+plaintext,ok,10,0.6,0.1636129856109619,1.0,0
+crypten_process,ok,10,0.6,11.764986681938172,1.0,0.000250619786021239

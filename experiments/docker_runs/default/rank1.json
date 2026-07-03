@@ -1,0 +1,26 @@
+{
+  "rank": 1,
+  "world_size": 2,
+  "op": "elemul",
+  "repeat": 5,
+  "times_s": [
+    0.0017893030000095678,
+    0.0017732080000314454,
+    0.0019251969999913854,
+    0.0016924069999504354,
+    0.0019237879999991492
+  ],
+  "median_s": 0.0017893030000095678,
+  "plain_times_s": [],
+  "plain_median_s": null,
+  "sum_last": 8.171844482421875,
+  "plain_sum_last": null,
+  "rendezvous": "tcp://crypten-r0:29500",
+  "backend": "gloo",
+  "security_profile": {
+    "mode": "crypten_2pc",
+    "notes": [
+      "Synthetic operator benchmark."
+    ]
+  }
+}

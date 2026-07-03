@@ -1,0 +1,524 @@
+{
+  "config": {
+    "samples": 10,
+    "max_seq_len": 16,
+    "mode": "process"
+  },
+  "plaintext": [
+    {
+      "text": "This movie is wonderful and heartwarming.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7627186179161072,
+        0.2372814416885376
+      ],
+      "confidence": 76.3,
+      "latency_s": 0.12010741233825684,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 1
+    },
+    {
+      "text": "A complete waste of time, absolutely terrible.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7376422882080078,
+        0.2623577415943146
+      ],
+      "confidence": 73.8,
+      "latency_s": 0.22572565078735352,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 0
+    },
+    {
+      "text": "I loved every minute of it!",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.6763930916786194,
+        0.3236069083213806
+      ],
+      "confidence": 67.6,
+      "latency_s": 0.14309382438659668,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 1
+    },
+    {
+      "text": "Terrible and boring film.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.752723753452301,
+        0.2472761869430542
+      ],
+      "confidence": 75.3,
+      "latency_s": 0.24673891067504883,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 0
+    },
+    {
+      "text": "Brilliant acting and a great story.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7587437033653259,
+        0.24125634133815765
+      ],
+      "confidence": 75.9,
+      "latency_s": 0.14844560623168945,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 1
+    },
+    {
+      "text": "A delightful film with amazing performances.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7659940123558044,
+        0.23400597274303436
+      ],
+      "confidence": 76.6,
+      "latency_s": 0.1049354076385498,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 1
+    },
+    {
+      "text": "Boring, predictable, and poorly acted.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7455769777297974,
+        0.25442302227020264
+      ],
+      "confidence": 74.6,
+      "latency_s": 0.14841032028198242,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 0
+    },
+    {
+      "text": "I hated this film from start to finish.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7392811179161072,
+        0.26071885228157043
+      ],
+      "confidence": 73.9,
+      "latency_s": 0.2504432201385498,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 0
+    },
+    {
+      "text": "Painfully slow and utterly pointless.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.739094614982605,
+        0.260905385017395
+      ],
+      "confidence": 73.9,
+      "latency_s": 0.12018036842346191,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 0
+    },
+    {
+      "text": "Nothing made sense and it was dull.",
+      "mode": "plaintext",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7316734790802002,
+        0.2683265209197998
+      ],
+      "confidence": 73.2,
+      "latency_s": 0.12804913520812988,
+      "method": "Plaintext BERT (HuggingFace 全量前向)",
+      "gold_label": 0
+    }
+  ],
+  "crypten": [
+    {
+      "text": "This movie is wonderful and heartwarming.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7664031982421875,
+        0.2336273193359375
+      ],
+      "confidence": 76.6,
+      "latency_s": 16.58313250541687,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 1
+    },
+    {
+      "text": "A complete waste of time, absolutely terrible.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7498931884765625,
+        0.2501220703125
+      ],
+      "confidence": 75.0,
+      "latency_s": 11.823055744171143,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 0
+    },
+    {
+      "text": "I loved every minute of it!",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.70013427734375,
+        0.29986572265625
+      ],
+      "confidence": 70.0,
+      "latency_s": 11.433478593826294,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 1
+    },
+    {
+      "text": "Terrible and boring film.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.77606201171875,
+        0.22393798828125
+      ],
+      "confidence": 77.6,
+      "latency_s": 8.959161758422852,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 0
+    },
+    {
+      "text": "Brilliant acting and a great story.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.775390625,
+        0.224639892578125
+      ],
+      "confidence": 77.5,
+      "latency_s": 11.945716857910156,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 1
+    },
+    {
+      "text": "A delightful film with amazing performances.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.78228759765625,
+        0.21771240234375
+      ],
+      "confidence": 78.2,
+      "latency_s": 9.280943870544434,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 1
+    },
+    {
+      "text": "Boring, predictable, and poorly acted.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7727813720703125,
+        0.22723388671875
+      ],
+      "confidence": 77.3,
+      "latency_s": 11.376695156097412,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 0
+    },
+    {
+      "text": "I hated this film from start to finish.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.7577667236328125,
+        0.24224853515625
+      ],
+      "confidence": 75.8,
+      "latency_s": 14.317184686660767,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 0
+    },
+    {
+      "text": "Painfully slow and utterly pointless.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.75555419921875,
+        0.2444610595703125
+      ],
+      "confidence": 75.6,
+      "latency_s": 10.275043725967407,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 0
+    },
+    {
+      "text": "Nothing made sense and it was dull.",
+      "mode": "crypten",
+      "label": "negative",
+      "prediction": "negative",
+      "probabilities": [
+        0.75628662109375,
+        0.2437286376953125
+      ],
+      "confidence": 75.6,
+      "latency_s": 11.65545392036438,
+      "method": "CrypTen 12L Encoder + 2Quad Softmax + Quad FFN + 2Quad 分类头",
+      "gold_label": 0
+    }
+  ],
+  "mcu_rust": [],
+  "per_sample": [
+    {
+      "sample_id": 0,
+      "text": "This movie is wonderful and heartwarming.",
+      "gold_label": 1,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.7627186179161072,
+      "plain_prob_pos": 0.2372814416885376,
+      "crypten_prob_neg": 0.7664031982421875,
+      "crypten_prob_pos": 0.2336273193359375,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.12010741233825684,
+      "crypten_latency_s": 16.58313250541687,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 9.30815690152755e-06,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 1,
+      "text": "A complete waste of time, absolutely terrible.",
+      "gold_label": 0,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.7376422882080078,
+      "plain_prob_pos": 0.2623577415943146,
+      "crypten_prob_neg": 0.7498931884765625,
+      "crypten_prob_pos": 0.2501220703125,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.22572565078735352,
+      "crypten_latency_s": 11.823055744171143,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 9.826308591083174e-05,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 2,
+      "text": "I loved every minute of it!",
+      "gold_label": 1,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.6763930916786194,
+      "plain_prob_pos": 0.3236069083213806,
+      "crypten_prob_neg": 0.70013427734375,
+      "crypten_prob_pos": 0.29986572265625,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.14309382438659668,
+      "crypten_latency_s": 11.433478593826294,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.0003284366040325736,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 3,
+      "text": "Terrible and boring film.",
+      "gold_label": 0,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.752723753452301,
+      "plain_prob_pos": 0.2472761869430542,
+      "crypten_prob_neg": 0.77606201171875,
+      "crypten_prob_pos": 0.22393798828125,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.24673891067504883,
+      "crypten_latency_s": 8.959161758422852,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.0003781638592084838,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 4,
+      "text": "Brilliant acting and a great story.",
+      "gold_label": 1,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.7587437033653259,
+      "plain_prob_pos": 0.24125634133815765,
+      "crypten_prob_neg": 0.775390625,
+      "crypten_prob_pos": 0.224639892578125,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.14844560623168945,
+      "crypten_latency_s": 11.945716857910156,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.0001933469615848487,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 5,
+      "text": "A delightful film with amazing performances.",
+      "gold_label": 1,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.7659940123558044,
+      "plain_prob_pos": 0.23400597274303436,
+      "crypten_prob_neg": 0.78228759765625,
+      "crypten_prob_pos": 0.21771240234375,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.1049354076385498,
+      "crypten_latency_s": 9.280943870544434,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.0001898277673187303,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 6,
+      "text": "Boring, predictable, and poorly acted.",
+      "gold_label": 0,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.7455769777297974,
+      "plain_prob_pos": 0.25442302227020264,
+      "crypten_prob_neg": 0.7727813720703125,
+      "crypten_prob_pos": 0.22723388671875,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.14841032028198242,
+      "crypten_latency_s": 11.376695156097412,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.0005057628336352015,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 7,
+      "text": "I hated this film from start to finish.",
+      "gold_label": 0,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.7392811179161072,
+      "plain_prob_pos": 0.26071885228157043,
+      "crypten_prob_neg": 0.7577667236328125,
+      "crypten_prob_pos": 0.24224853515625,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.2504432201385498,
+      "crypten_latency_s": 14.317184686660767,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.00022667300873737296,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 8,
+      "text": "Painfully slow and utterly pointless.",
+      "gold_label": 0,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.739094614982605,
+      "plain_prob_pos": 0.260905385017395,
+      "crypten_prob_neg": 0.75555419921875,
+      "crypten_prob_pos": 0.2444610595703125,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.12018036842346191,
+      "crypten_latency_s": 10.275043725967407,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.0001791099287048398,
+      "js_plain_vs_mcu": null
+    },
+    {
+      "sample_id": 9,
+      "text": "Nothing made sense and it was dull.",
+      "gold_label": 0,
+      "plain_pred": "negative",
+      "crypten_pred": "negative",
+      "mcu_pred": null,
+      "plain_prob_neg": 0.7316734790802002,
+      "plain_prob_pos": 0.2683265209197998,
+      "crypten_prob_neg": 0.75628662109375,
+      "crypten_prob_pos": 0.2437286376953125,
+      "mcu_prob_neg": null,
+      "mcu_prob_pos": null,
+      "plain_latency_s": 0.12804913520812988,
+      "crypten_latency_s": 11.65545392036438,
+      "mcu_latency_s": null,
+      "crypten_matches_plain": 1,
+      "mcu_matches_plain": null,
+      "js_plain_vs_crypten": 0.0003973056541779797,
+      "js_plain_vs_mcu": null
+    }
+  ],
+  "summary": [
+    {
+      "mode": "plaintext",
+      "status": "ok",
+      "n_samples": 10,
+      "accuracy": 0.6,
+      "avg_latency_s": 0.1636129856109619,
+      "top1_match_with_plain": 1.0,
+      "mean_js": 0
+    },
+    {
+      "mode": "crypten_process",
+      "status": "ok",
+      "n_samples": 10,
+      "accuracy": 0.6,
+      "avg_latency_s": 11.764986681938172,
+      "top1_match_with_plain": 1.0,
+      "mean_js": 0.000250619786021239
+    }
+  ]
+}

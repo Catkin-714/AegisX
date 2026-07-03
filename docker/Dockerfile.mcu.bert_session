@@ -1,0 +1,4 @@
+FROM aegisx-mcu:local
+
+ENTRYPOINT ["/usr/local/bin/mcu_entrypoint.sh"]
+CMD []

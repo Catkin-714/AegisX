@@ -1,0 +1,193 @@
+name: aegisx-mpc
+
+services:
+  mcu-hp:
+    build:
+      context: ..
+      dockerfile: ${MCU_DOCKERFILE:-docker/Dockerfile.mcu}
+    image: ${MCU_IMAGE:-aegisx-mcu:local}
+    environment:
+      MCU_ROLE: hp
+      MCU_KIND: ${MCU_KIND:-tensor}
+      MCU_OP: ${MCU_OP:-elemul}
+      MCU_PORT: ${MCU_PORT:-9200}
+      MCU_LEN: ${MCU_LEN:-64}
+      MCU_M: ${MCU_M:-4}
+      MCU_K: ${MCU_K:-16}
+      MCU_N: ${MCU_N:-16}
+      MCU_BATCH: ${MCU_BATCH:-1}
+      MCU_SEQ: ${MCU_SEQ:-16}
+      MCU_HIDDEN: ${MCU_HIDDEN:-768}
+      MCU_HEADS: ${MCU_HEADS:-12}
+      MCU_FFN: ${MCU_FFN:-3072}
+      MCU_LAYERS: ${MCU_LAYERS:-12}
+      MCU_STATE_MODE: ${MCU_STATE_MODE:-synthetic}
+      MCU_INPUT_MODE: ${MCU_INPUT_MODE:-synthetic}
+      MCU_RESCALE_BITS: ${MCU_RESCALE_BITS:-0}
+      MCU_RESCALE_MODE: ${MCU_RESCALE_MODE:-local}
+      MCU_SHARE_DIR: ${MCU_SHARE_DIR:-/workspace/bert_shares}
+      MCU_OUT_DIR: ${MCU_OUT_DIR:-/workspace/out/default}
+      MCU_CUDA_MIN_OPS: ${MCU_CUDA_MIN_OPS:-1048576}
+    volumes:
+      - ${AEGISX_OUT_HOST:-../experiments/docker_runs}:/workspace/out
+      - ${AEGISX_BERT_SHARES_HOST:-../experiments/empty_bert_shares}:/workspace/bert_shares:ro
+    networks:
+      - mpcnet
+
+  mcu-p0:
+    image: ${MCU_IMAGE:-aegisx-mcu:local}
+    depends_on:
+      - mcu-hp
+    environment:
+      MCU_ROLE: p0
+      MCU_KIND: ${MCU_KIND:-tensor}
+      MCU_OP: ${MCU_OP:-elemul}
+      MCU_PORT: ${MCU_PORT:-9200}
+      MCU_LEN: ${MCU_LEN:-64}
+      MCU_M: ${MCU_M:-4}
+      MCU_K: ${MCU_K:-16}
+      MCU_N: ${MCU_N:-16}
+      MCU_BATCH: ${MCU_BATCH:-1}
+      MCU_SEQ: ${MCU_SEQ:-16}
+      MCU_HIDDEN: ${MCU_HIDDEN:-768}
+      MCU_HEADS: ${MCU_HEADS:-12}
+      MCU_FFN: ${MCU_FFN:-3072}
+      MCU_LAYERS: ${MCU_LAYERS:-12}
+      MCU_STATE_MODE: ${MCU_STATE_MODE:-synthetic}
+      MCU_INPUT_MODE: ${MCU_INPUT_MODE:-synthetic}
+      MCU_RESCALE_BITS: ${MCU_RESCALE_BITS:-0}
+      MCU_RESCALE_MODE: ${MCU_RESCALE_MODE:-local}
+      MCU_SHARE_DIR: ${MCU_SHARE_DIR:-/workspace/bert_shares/${MCU_ROLE:-p0}}
+      MCU_OUT_DIR: ${MCU_OUT_DIR:-/workspace/out/default}
+      MCU_START_DELAY: ${MCU_START_DELAY:-1}
+      MCU_CUDA_MIN_OPS: ${MCU_CUDA_MIN_OPS:-1048576}
+    volumes:
+      - ${AEGISX_OUT_HOST:-../experiments/docker_runs}:/workspace/out
+      - ${AEGISX_BERT_SHARES_HOST:-../experiments/empty_bert_shares}:/workspace/bert_shares:ro
+    networks:
+      - mpcnet
+
+  mcu-p1:
+    image: ${MCU_IMAGE:-aegisx-mcu:local}
+    depends_on:
+      - mcu-hp
+    environment:
+      MCU_ROLE: p1
+      MCU_KIND: ${MCU_KIND:-tensor}
+      MCU_OP: ${MCU_OP:-elemul}
+      MCU_PORT: ${MCU_PORT:-9200}
+      MCU_LEN: ${MCU_LEN:-64}
+      MCU_M: ${MCU_M:-4}
+      MCU_K: ${MCU_K:-16}
+      MCU_N: ${MCU_N:-16}
+      MCU_BATCH: ${MCU_BATCH:-1}
+      MCU_SEQ: ${MCU_SEQ:-16}
+      MCU_HIDDEN: ${MCU_HIDDEN:-768}
+      MCU_HEADS: ${MCU_HEADS:-12}
+      MCU_FFN: ${MCU_FFN:-3072}
+      MCU_LAYERS: ${MCU_LAYERS:-12}
+      MCU_STATE_MODE: ${MCU_STATE_MODE:-synthetic}
+      MCU_INPUT_MODE: ${MCU_INPUT_MODE:-synthetic}
+      MCU_RESCALE_BITS: ${MCU_RESCALE_BITS:-0}
+      MCU_RESCALE_MODE: ${MCU_RESCALE_MODE:-local}
+      MCU_SHARE_DIR: ${MCU_SHARE_DIR:-/workspace/bert_shares/${MCU_ROLE:-p1}}
+      MCU_OUT_DIR: ${MCU_OUT_DIR:-/workspace/out/default}
+      MCU_START_DELAY: ${MCU_START_DELAY:-1}
+      MCU_CUDA_MIN_OPS: ${MCU_CUDA_MIN_OPS:-1048576}
+    volumes:
+      - ${AEGISX_OUT_HOST:-../experiments/docker_runs}:/workspace/out
+      - ${AEGISX_BERT_SHARES_HOST:-../experiments/empty_bert_shares}:/workspace/bert_shares:ro
+    networks:
+      - mpcnet
+
+  mcu-verify:
+    image: ${MCU_IMAGE:-aegisx-mcu:local}
+    environment:
+      MCU_ROLE: verify
+      MCU_KIND: ${MCU_KIND:-tensor}
+      MCU_OP: ${MCU_OP:-elemul}
+      MCU_PORT: ${MCU_PORT:-9200}
+      MCU_LEN: ${MCU_LEN:-64}
+      MCU_M: ${MCU_M:-4}
+      MCU_K: ${MCU_K:-16}
+      MCU_N: ${MCU_N:-16}
+      MCU_BATCH: ${MCU_BATCH:-1}
+      MCU_SEQ: ${MCU_SEQ:-16}
+      MCU_HIDDEN: ${MCU_HIDDEN:-768}
+      MCU_HEADS: ${MCU_HEADS:-12}
+      MCU_FFN: ${MCU_FFN:-3072}
+      MCU_LAYERS: ${MCU_LAYERS:-12}
+      MCU_STATE_MODE: ${MCU_STATE_MODE:-synthetic}
+      MCU_INPUT_MODE: ${MCU_INPUT_MODE:-synthetic}
+      MCU_RESCALE_BITS: ${MCU_RESCALE_BITS:-0}
+      MCU_RESCALE_MODE: ${MCU_RESCALE_MODE:-local}
+      MCU_SHARE_DIR: ${MCU_SHARE_DIR:-/workspace/bert_shares}
+      MCU_OUT_DIR: ${MCU_OUT_DIR:-/workspace/out/default}
+      MCU_CUDA_MIN_OPS: ${MCU_CUDA_MIN_OPS:-1048576}
+    volumes:
+      - ${AEGISX_OUT_HOST:-../experiments/docker_runs}:/workspace/out
+      - ${AEGISX_BERT_SHARES_HOST:-../experiments/empty_bert_shares}:/workspace/bert_shares:ro
+    networks:
+      - mpcnet
+
+  crypten-r0:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.crypten
+    image: aegisx-crypten:local
+    environment:
+      RANK: 0
+      WORLD_SIZE: 2
+      RENDEZVOUS: tcp://crypten-r0:29500
+      DISTRIBUTED_BACKEND: gloo
+      CRYPTEN_OP: ${CRYPTEN_OP:-elemul}
+      CRYPTEN_REPEAT: ${CRYPTEN_REPEAT:-5}
+      CRYPTEN_LEN: ${CRYPTEN_LEN:-64}
+      CRYPTEN_M: ${CRYPTEN_M:-4}
+      CRYPTEN_K: ${CRYPTEN_K:-16}
+      CRYPTEN_N: ${CRYPTEN_N:-16}
+      CRYPTEN_BATCH: ${CRYPTEN_BATCH:-1}
+      CRYPTEN_SOFTMAX_ROWS: ${CRYPTEN_SOFTMAX_ROWS:-16}
+      CRYPTEN_SOFTMAX_COLS: ${CRYPTEN_SOFTMAX_COLS:-4}
+      CRYPTEN_MAX_SEQ_LEN: ${CRYPTEN_MAX_SEQ_LEN:-16}
+      CRYPTEN_MAX_LAYERS: ${CRYPTEN_MAX_LAYERS:-12}
+      CRYPTEN_BERT_NONLINEAR: ${CRYPTEN_BERT_NONLINEAR:-native}
+      CRYPTEN_INPUT_JSON: ${CRYPTEN_INPUT_JSON:-}
+      CRYPTEN_OUT_DIR: ${CRYPTEN_OUT_DIR:-/workspace/out/default}
+    volumes:
+      - ${AEGISX_OUT_HOST:-../experiments/docker_runs}:/workspace/out
+    networks:
+      - mpcnet
+
+  crypten-r1:
+    image: aegisx-crypten:local
+    depends_on:
+      - crypten-r0
+    environment:
+      RANK: 1
+      WORLD_SIZE: 2
+      RENDEZVOUS: tcp://crypten-r0:29500
+      DISTRIBUTED_BACKEND: gloo
+      CRYPTEN_OP: ${CRYPTEN_OP:-elemul}
+      CRYPTEN_REPEAT: ${CRYPTEN_REPEAT:-5}
+      CRYPTEN_LEN: ${CRYPTEN_LEN:-64}
+      CRYPTEN_M: ${CRYPTEN_M:-4}
+      CRYPTEN_K: ${CRYPTEN_K:-16}
+      CRYPTEN_N: ${CRYPTEN_N:-16}
+      CRYPTEN_BATCH: ${CRYPTEN_BATCH:-1}
+      CRYPTEN_SOFTMAX_ROWS: ${CRYPTEN_SOFTMAX_ROWS:-16}
+      CRYPTEN_SOFTMAX_COLS: ${CRYPTEN_SOFTMAX_COLS:-4}
+      CRYPTEN_MAX_SEQ_LEN: ${CRYPTEN_MAX_SEQ_LEN:-16}
+      CRYPTEN_MAX_LAYERS: ${CRYPTEN_MAX_LAYERS:-12}
+      CRYPTEN_BERT_NONLINEAR: ${CRYPTEN_BERT_NONLINEAR:-native}
+      CRYPTEN_INPUT_JSON: ${CRYPTEN_INPUT_JSON:-}
+      CRYPTEN_OUT_DIR: ${CRYPTEN_OUT_DIR:-/workspace/out/default}
+      CRYPTEN_START_DELAY: ${CRYPTEN_START_DELAY:-1}
+    volumes:
+      - ${AEGISX_OUT_HOST:-../experiments/docker_runs}:/workspace/out
+    networks:
+      - mpcnet
+
+networks:
+  mpcnet:
+    driver: bridge

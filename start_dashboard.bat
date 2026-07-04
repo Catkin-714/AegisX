@@ -9,11 +9,11 @@ echo ============================================
 echo.
 
 REM Check Python
-venv\Scripts\python.exe --version >nul 2>&1
+.venv\Scripts\python.exe --version >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [ERROR] Python venv not found at venv\Scripts\python.exe
-    echo Run: python -m venv venv
-    echo Then: venv\Scripts\pip install fastapi uvicorn pycryptodome
+    echo [ERROR] Python venv not found at .venv\Scripts\python.exe
+    echo Run: python -m venv .venv
+    echo Then: .venv\Scripts\pip install fastapi uvicorn pycryptodome
     pause
     exit /b 1
 )
@@ -49,7 +49,7 @@ echo   [OK] Rust HP launched
 
 REM 2. Dashboard Backend
 echo [2/3] Starting Dashboard API on port 8000...
-start "DashAPI" cmd /c "cd /d %~dp0dashboard\backend && ..\..\venv\Scripts\python.exe main.py & pause"
+start "DashAPI" cmd /c "cd /d %~dp0dashboard\backend && ..\..\.venv\Scripts\python.exe main.py & pause"
 ping -n 4 127.0.0.1 >nul
 echo   [OK] Dashboard launched
 

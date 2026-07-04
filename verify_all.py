@@ -4,7 +4,7 @@ verify_all.py — AegisX 全量验证（~3 秒）
 自动启动 Rust HP，运行全部验证，完成后自动清理。
 
 用法:
-    venv\Scripts\python.exe verify_all.py
+    .venv\Scripts\python.exe verify_all.py
 """
 import subprocess, os, sys, time, math, socket, json, struct, threading, hashlib
 
